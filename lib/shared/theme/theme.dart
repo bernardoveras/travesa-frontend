@@ -1,45 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppTheme {
-  /// Init `theme data` from application
-  static ThemeData light(BuildContext context) {
-    return ThemeData(
-      brightness: Brightness.light,
-      primaryColor: primary,
-      primaryColorDark: primaryDark,
-      primaryColorLight: primaryLight,
-      scaffoldBackgroundColor: background,
-      dialogBackgroundColor: background,
-      backgroundColor: background,
-      accentColor: secondary,
-      appBarTheme: _appBarTheme(context),
-      textTheme: _textTheme(context),
-    );
-  }
-
-  static AppBarTheme? _appBarTheme(BuildContext context) {
-    return AppBarTheme(
-      brightness: Brightness.dark,
-      textTheme: Theme.of(context).textTheme.apply(
-            fontFamily: 'Inter',
-            bodyColor: Colors.white,
-            displayColor: Colors.white,
-            decoration: TextDecoration.none,
-          ),
-      color: primary,
-      foregroundColor: Colors.white,
-      elevation: 0,
-      centerTitle: true,
-    );
-  }
-
-  static TextTheme _textTheme(BuildContext context) {
-    return Theme.of(context).textTheme.apply(
-          fontFamily: 'Inter',
-          decoration: TextDecoration.none,
-        );
-  }
-
   /// Pallete of `Primary` color's
   static Color primary = Color(0xFF665CC8);
   static Color primaryDark = Color(0xFF4F45AA);
@@ -58,4 +20,43 @@ class AppTheme {
 
   /// Other color's
   static Color background = Color(0xFFFAFAFC);
+
+  /// Init `theme data` from application
+  static ThemeData light(BuildContext context) {
+    return ThemeData(
+      brightness: Brightness.light,
+      primaryColor: primary,
+      primaryColorDark: primaryDark,
+      primaryColorLight: primaryLight,
+      scaffoldBackgroundColor: background,
+      dialogBackgroundColor: background,
+      backgroundColor: background,
+      accentColor: secondary,
+      appBarTheme: _appBarTheme(context),
+      textTheme: _textTheme(context),
+    );
+  }
+
+  static AppBarTheme? _appBarTheme(BuildContext context) {
+    return AppBarTheme(
+      textTheme: Theme.of(context).textTheme.apply(
+            fontFamily: 'Inter',
+            bodyColor: Colors.white,
+            displayColor: Colors.white,
+            decoration: TextDecoration.none,
+          ),
+      brightness: Brightness.dark,
+      color: primary,
+      foregroundColor: Colors.white,
+      elevation: 0,
+      centerTitle: true,
+    );
+  }
+
+  static TextTheme _textTheme(BuildContext context) {
+    return Theme.of(context).textTheme.apply(
+          fontFamily: 'Inter',
+          decoration: TextDecoration.none,
+        );
+  }
 }
