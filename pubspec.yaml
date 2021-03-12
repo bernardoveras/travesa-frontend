@@ -7,6 +7,12 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
+  # Framework para gerência de estado/injeção de dependência/navegação, etc...
+  get: ^4.0.0-nullsafety.2
+  # Package para animações
+  animate_do: ^2.0.0
+
+  # Flutter
   flutter:
     sdk: flutter
 
