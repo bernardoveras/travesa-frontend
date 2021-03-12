@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travesa/shared/navigation/navigation.dart';
+import 'package:travesa/shared/theme/theme.dart';
 
 class App extends StatelessWidget {
   final String initialRoute;
@@ -13,6 +14,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: initialRoute,
       getPages: Navigation.routes,
+      theme: AppTheme.light(context),
     );
   }
 }
