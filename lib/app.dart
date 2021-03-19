@@ -20,6 +20,11 @@ class App extends StatelessWidget {
           initialRoute: initialRoute,
           getPages: Navigation.routes,
           theme: AppTheme.light(context),
+          darkTheme: AppTheme.dark(context),
+          themeMode: ThemeMode.light,
+          onUnknownRoute: (settings) {
+            print('teste');
+          },
         );
       },
     );
